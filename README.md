@@ -5,7 +5,7 @@
 This repository contains a `tf.keras` implementation of **MORAN**, a neural network with rectified attention for general scene text regonition [outperforming all current state-of-the-art approaches in lexicon-free mode](https://arxiv.org/pdf/1901.03003.pdf).
 
 <p align="center">
-  <img width="100%" src="./docs/demo.gif">
+  <img src="./docs/demo.gif">
 </p>
 
 ## Table of Contents
@@ -26,7 +26,7 @@ The model consists of two parts: MORN (Multi-Object Rectification Network), whic
 The figure below shows the overall structure of the model:
 
 <p align="center">
-  <img  src="./docs/moran-architecture.png">
+  <img src="./docs/moran-architecture.png">
 </p>
 
 ### MORN (Multi-Object Rectification Network)
@@ -34,7 +34,7 @@ The figure below shows the overall structure of the model:
 The architecture of MORN is given in the table below:
 
 <p align="center">
-  <img  src="./docs/morn-architecture.png">
+  <img width="70%" src="./docs/morn-architecture.png">
 </p>
 
 ### ASRN (Attention-based Sequence Recognition Network)
@@ -42,11 +42,11 @@ The architecture of MORN is given in the table below:
 The architecture of ASRN is given in the table below:
 
 <p align="center">
-  <img  src="./docs/asrn-architecture.png">
+  <img width="70%" src="./docs/asrn-architecture.png">
 </p>
 
 ## Examples & Limitations
 
 <p align="center">
-  <img  src="./docs/examples.png">
+  <img width="70%" src="./docs/examples.png">
 </p>
