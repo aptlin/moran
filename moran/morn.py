@@ -29,7 +29,7 @@ class MORN(Model):
         self.grid_y = self.grid[:, :, :, 1].unsqueeze(3)
 
     def call(self, inputs, training=False):
-        batch_size, height, width, channels = inputs.shape
+        batch_size, height, width, channels = tf.shape(inputs)
         if training and np.random.random() > 0.5:
             return UpSampling2D(
                 (self.target_height / height, self.target_width / width),
@@ -39,12 +39,12 @@ class MORN(Model):
         grid = self.grid[:batch_size]
         grid_x = self.grid_x[:batch_size]
         grid_y = self.grid_y[:batch_size]
-        x_small = UpSampling2D(
+        input_sample = UpSampling2D(
             (self.target_height / height, self.target_width / width),
             interpolation="bilinear",
         )
 
-        offsets = self.filters(x_small)
+        offsets = self.filters(input_sample)
         offsets_pos = RELU()(offsets)
         offsets_neg = RELU()(-offsets)
         offsets_pool = self.pool(offsets_pos) - self.pool(offsets_neg)
